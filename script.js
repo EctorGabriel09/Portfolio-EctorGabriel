@@ -23,32 +23,28 @@ menuBtn.addEventListener("click", () => {
 
 
 // ==================== ANIMAÇÕES AO ROLAR (SCROLLREVEAL) ====================
-// Biblioteca: https://scrollrevealjs.org
-// Lembre de incluir no HTML antes do script.js:
-// <script src="https://unpkg.com/scrollreveal"></script>
 
 ScrollReveal({
-  reset: true, // ✅ repete sempre a animação
-  distance: '60px',
+  reset: true, // ✅ 
   duration: 1200,
   delay: 150,
   easing: 'ease-in-out'
 });
 
-// --- HERO (entrada principal) ---
+
 ScrollReveal().reveal('.hero-text', { origin: 'left' });
 ScrollReveal().reveal('.hero-photo', { origin: 'right' });
 
-// --- TÍTULOS DAS SEÇÕES ---
+
 ScrollReveal().reveal('.section-title', { origin: 'top' });
 
-// --- CONTEÚDO GERAL ---
+-
 ScrollReveal().reveal('.section p, .skills img, .education-item, .project-item, .contact-item', {
   origin: 'bottom',
   interval: 100
 });
 
-// --- LINKS E BOTÕES (projetos e contatos) ---
+
 ScrollReveal().reveal('.project-link, .contact-item img', {
   origin: 'bottom',
   distance: '30px',

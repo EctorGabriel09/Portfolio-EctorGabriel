@@ -89,40 +89,6 @@ body {
   width: 100%;
 }
 
-/* ===== THEME SWITCH ===== */
-.switch {
-  width: 50px;
-  height: 25px;
-  background: #222;
-  display: inline-block;
-  border-radius: 20px;
-  position: relative;
-  cursor: pointer;
-  transition: background 0.3s;
-  border: 2px solid var(--accent-color);
-}
-
-.switch::after {
-  content: "";
-  width: 19px;
-  height: 19px;
-  background: var(--accent-color);
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  border-radius: 50%;
-  transition: 0.3s;
-}
-
-#theme-switch:checked + .switch {
-  background: var(--accent-color);
-}
-
-#theme-switch:checked + .switch::after {
-  background: #000;
-  transform: translateX(24px);
-}
-
 /* ===== HERO ===== */
 .hero {
   display: flex;
