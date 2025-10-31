@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --bg-color: #000;
+  --text-color: #fff;
+  --accent-color: #00ff80;
+}
+
+body.light {
+  --bg-color: #f5f5f5;
+  --text-color: #000;
+  --accent-color: #00b36b;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.4s;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* ===== MENU ===== */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  height: 3px;
+  width: 25px;
+  background: var(--accent-color);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+}
+
+.nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== THEME SWITCH ===== */
+.switch {
+  width: 50px;
+  height: 25px;
+  background: #222;
+  display: inline-block;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: 2px solid var(--accent-color);
+}
+
+.switch::after {
+  content: "";
+  width: 19px;
+  height: 19px;
+  background: var(--accent-color);
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+#theme-switch:checked + .switch {
+  background: var(--accent-color);
+}
+
+#theme-switch:checked + .switch::after {
+  background: #000;
+  transform: translateX(24px);
+}
+
+/* ===== HERO ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 80px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+}
+
+.neon {
+  color: var(--accent-color);
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+.hero-photo img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-color);
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--accent-color);
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.skills img {
+  width: 70px;
+  filter: drop-shadow(0 0 10px var(--accent-color));
+  transition: transform 0.3s;
+}
+
+.skills img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0f0f0f;
+  font-size: 0.9rem;
+  color: var(--accent-color);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    display: none;
+    width: 100%;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+}
+
+/* ======== FORMAÇÃO ======== */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.education-item {
+  background: rgba(0, 255, 0, 0.05);
+  border: 1px solid #39ff14;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.education-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+}
+
+.education-item h3 {
+  color: #39ff14;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.education-item p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+/* ======== PROJETOS ======== */
+.projects-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.project-item {
+  background: rgba(0, 255, 0, 0.05);
+  border: 1px solid #39ff14;
+  border-radius: 10px;
+  padding: 25px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+}
+
+.project-item h3 {
+  color: #39ff14;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.project-item p {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.project-link {
+  text-decoration: none;
+  color: #000;
+  background-color: #39ff14;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+  font-weight: 600;
+}
+
+.project-link:hover {
+  background-color: #2ecc71;
+  transform: scale(1.05);
+}
+
+/* ======== CONTATO ======== */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 255, 0, 0.05);
+  border: 1px solid #39ff14;
+  border-radius: 12px;
+  padding: 15px 25px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.contact-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+  background: rgba(0, 255, 0, 0.1);
+}
+
+.contact-item img {
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(0 0 5px #39ff14);
+}
+
+.contact-item span {
+  font-size: 1rem;
+}
+
+/* Tema claro */
+body.light .contact-item {
+  color: #111;
+  border-color: #111;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.light .contact-item:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+body.light .contact-item img {
+  filter: none;
+}
+
+/* ======= ANIMAÇÕES AO ROLAR ======= */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
